@@ -13,7 +13,8 @@ import sys
 WIDTH, HEIGHT = 1024, 1024
 OUTPUT_ENV = "MAKEFUN_OUTPUT_DIR"
 DEFAULT_OUTPUT = os.path.join(os.getcwd(), "entry.png")
-OUTPUT_PATH = os.environ.get(OUTPUT_ENV, DEFAULT_OUTPUT)
+OUTPUT_PATH = (os.path.join(os.environ[OUTPUT_ENV], "entry.png")
+               if os.environ.get(OUTPUT_ENV) else DEFAULT_OUTPUT)
 
 MARGIN = 20              # page margin in pixels
 MASTHEAD_H = 120         # height allocated to masthead
